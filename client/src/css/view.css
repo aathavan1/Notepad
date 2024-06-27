@@ -1,0 +1,35 @@
+body{
+  background-image: url(../images/bk.jpg);
+}
+.box{
+  border: 1px solid black;
+  border-radius: 2px;
+  margin-left: 400px;
+  margin-top: 10%;
+  /* background-color: rgba(250, 234, 214,0.6); */
+  background-color: transparent;
+  width: 30%;
+  backdrop-filter: blur(60px);
+}
+
+table,td,th{
+  border-collapse: collapse;
+  padding: 10px;
+  border-bottom: 1px; color: white;
+}
+.update{
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgba(17, 149, 17, 0.701);
+  font-weight: 700;
+}
+.delete{
+  margin-left: 30px;
+  border-radius: 9px;
+  height: 30px;
+  width: 70px;
+  cursor: pointer;
+  background-color: red;
+  font-weight: 700;
+}
