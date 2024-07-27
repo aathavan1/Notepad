@@ -1,7 +1,6 @@
 import axios from 'axios';
 import './css/view.css';
 import { useEffect, useState } from 'react';
-import express from 'express';
 
 function ViewUser() {
   const [user, setUser] = useState([]);
@@ -20,7 +19,18 @@ function ViewUser() {
   }, [])
 
  
-  
+const handlesub =async()=>{
+  const na=name;
+  const no=note
+ await axios.post('http://localhost:3001/add',{
+  "name":na,
+  "notes":no
+})}
+
+
+const del =async(idd)=>{
+  await axios.delete('http://localhost:3001/add'+idd)
+}
   
 
 
@@ -38,7 +48,7 @@ function ViewUser() {
                 <tr>
                   <td>{user.name}</td>
                   <td>{user.note}</td>
-                  <button className='delete'>Delete</button>
+                  <button className='delete' onClick={()=>del(user._id)}>Delete</button>
                 </tr>
               )
             })
@@ -50,7 +60,7 @@ function ViewUser() {
           <lable>Notes</lable>
           <input type='text' onChange={(e) => setNote(e.target.value)}></input><br>
           </br>
-          <button type='sumit'>submit</button>
+          <button type='sumit' onClick={handlesub}>submit</button>
         </form>
       </div>
     </>
