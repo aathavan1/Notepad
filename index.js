@@ -18,6 +18,44 @@ app.get("/view",((req,res)=>{
     })
 }))
 
+app.post("/add", async (req, res) => {
+
+    const data = new UserModel({
+        "name": req.body.name,
+        "notes": req.body.notes,
+    })
+    try {
+        await data.save()
+        res.status(200).json({
+            "message": data
+        })
+    } catch {
+        res.status(500).json({
+            "message": "error"
+        })
+    }
+
+})
+
+
+app.delete("/del:id", async (req, res) => {
+    try {
+        await UserModel.findByIdAndDelete(req.params.id);
+        res.status(200).json({
+            "message": "sucess"
+        })
+
+    }
+    catch {
+        res.status(500).json({
+            "message": "error"
+        })
+    }
+
+})
+
+
+
 
 
 app.listen(3001,()=>{
