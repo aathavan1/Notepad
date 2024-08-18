@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import ViewUser from './ViewUser';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-// import ViewUser from './ViewUser';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ViewUser/>
+    <App />
   </React.StrictMode>
 );
 

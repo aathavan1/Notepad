@@ -1,35 +1,123 @@
-body{
-  background-image: url(../images/bk.jpg);
-}
-.box{
-  border: 1px solid black;
-  border-radius: 2px;
-  margin-left: 400px;
-  margin-top: 10%;
-  /* background-color: rgba(250, 234, 214,0.6); */
-  background-color: transparent;
-  width: 30%;
-  backdrop-filter: blur(60px);
+/* General container styling */
+.view-container {
+  background: url('https://images.unsplash.com/photo-1494253100401-3f80d58b0c85') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #df9494;
+  font-family: 'Roboto', sans-serif;
 }
 
-table,td,th{
-  border-collapse: collapse;
+/* Header styling */
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Input and button container styling */
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Input field styling */
+.note-input {
   padding: 10px;
-  border-bottom: 1px; color: white;
-}
-.update{
-  margin-left: 5px;
+  border: 2 px inset black;
   border-radius: 5px;
-  cursor: pointer;
-  background-color: rgba(17, 149, 17, 0.701);
-  font-weight: 700;
+  outline: none;
+  font-size: 1em;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  width: 300px;
+  max-width: 100%;
 }
-.delete{
-  margin-left: 30px;
-  border-radius: 9px;
-  height: 30px;
-  width: 70px;
+
+.note-input:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Add button styling */
+.add-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1em;
   cursor: pointer;
-  background-color: red;
-  font-weight: 700;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.add-button:active {
+  transform: scale(1);
+}
+
+/* Notes list styling */
+.notes-list {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Note item styling */
+.note-item {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  color: rgba(255, 255, 255, 0.9);
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.note-item:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.9);
+  border: 2px inset black;
+  transform: translateY(-5px);
+}
+
+.note-content {
+  font-size: 1em;
+  margin: 0;
+}
+
+/* Delete button styling */
+.delete-button {
+  background: none;
+  border: none;
+  color: #e63946;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.delete-button:hover {
+  color: #e63946;
+  transform: scale(1.2);
+}
+
+.delete-button:active {
+  transform: scale(1);
 }
