@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { MdDelete } from 'react-icons/md';
 import { IoMdArrowRoundBack } from "react-icons/io";
-import '../css/View.css'; // Import the CSS file
+import '../css/view.css'; // Import the CSS file
 
 function View() {
   const [notes, setNotes] = useState([]);

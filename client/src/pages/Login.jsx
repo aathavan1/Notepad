@@ -31,9 +31,9 @@ function Login() {
             "uname": uname,
             "pass": pass
           })
-          .then((response) => {
-            navigate('/view/' + response.data);
-          });
+            .then((response) => {
+              navigate('/view/' + response.data);
+            });
         } else {
           swal.fire("Wrong password", "Try a different password you last knew", "error");
         }
@@ -48,7 +48,7 @@ function Login() {
     <div className='login-container'>
       <div className='login-box'>
         <h1>User Login</h1>
-        <button className='button-add-person' onClick={() => navigate('./forget')}>
+        <button className='button-add-person' onClick={() => navigate('./reg')}>
           <IoPersonAdd />
         </button>
         <form className='login-form' onSubmit={(e) => { e.preventDefault(); handlesub(); }}>

@@ -9,33 +9,42 @@ function Userreg() {
   const [pass, setPass] = useState('')
 
 
- 
-  const handlesub = async() => {
-    await axios.post('http://localhost:3001/user/add',{
-      
-      "username":uname,
-      "password":pass
+
+  const handlesub = async () => {
+    await axios.post('http://localhost:3001/user/add', {
+
+      "username": uname,
+      "password": pass
     })
-   
+
   }
-  
+
 
   return (
-    <div className='box-center'>
-      <br />
+    <div className='login-containe'>
       <center>
-      <h1>New User Registration</h1></center>
-      <br />
-      <br />
-      <form className='form'>
+      <div className='login-box' >
 
-        <label>Enter your username</label>
-        <input type="text" placeholder="Username" name='name' onChange={(e) => setUser(e.target.value)} /><br />
-        <label>Enter your Password</label>
-        <input type="password" placeholder="password" name='pass' onChange={(e) => setPass(e.target.value)} />
-        <button onClick={handlesub} type='button'>Submit</button>
-      </form>
+        <h1>New User Registration</h1>
 
+        <form className='login-form'>
+
+          <label htmlFor='username'>Enter your username</label>
+          <input type="text"
+            id='username' 
+            placeholder="Username"
+             name='name' 
+             onChange={(e) => setUser(e.target.value)} /><br />
+          <label htmlFor='password'>Enter your Password</label>
+          <input type="password"
+            id='password'
+             placeholder="password" 
+             name='pass' 
+             onChange={(e) => setPass(e.target.value)} />
+          <button onClick={handlesub} type='submit'>Submit</button>
+        </form>
+      </div>
+      </center>
     </div>
   );
 }
