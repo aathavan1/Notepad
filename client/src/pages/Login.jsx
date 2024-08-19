@@ -12,7 +12,7 @@ function Login() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:3001/user/')
+    axios.get('https://notepad-server-one.vercel.app/user/')
       .then((response) => {
         setFinduser(response.data);
       })
@@ -27,7 +27,7 @@ function Login() {
       if (user.username === uname) {
         userFound = true;
         if (user.password === pass) {
-          axios.put('http://localhost:3001/user/findu', {
+          axios.put('https://notepad-server-one.vercel.app/user/findu', {
             "uname": uname,
             "pass": pass
           })

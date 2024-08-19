@@ -12,7 +12,7 @@ function View() {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/view/${id}`)
+    axios.get(`https://notepad-server-one.vercel.app/view/${id}`)
       .then((response) => {
         setNotes(response.data);
       })
@@ -24,7 +24,7 @@ function View() {
   const submit = async () => {
     try {
       reload()
-      await axios.post('http://localhost:3001/view/add', {
+      await axios.post('https://notepad-server-one.vercel.app/view/add', {
         uid: id,
         unote: content,
       });
@@ -42,7 +42,7 @@ function View() {
   const delfun = async (keys) => {
     try {
       setCount(count + 1); // Refresh notes by updating count
-      await axios.delete(`http://localhost:3001/view/delete/${keys}`);
+      await axios.delete(`https://notepad-server-one.vercel.app/view/delete/${keys}`);
     } catch (err) {
       console.error("Error deleting note", err);
     }

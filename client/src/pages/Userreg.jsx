@@ -11,7 +11,7 @@ function Userreg() {
 
 
   const handlesub = async () => {
-    await axios.post('http://localhost:3001/user/add', {
+    await axios.post('https://notepad-server-one.vercel.app/user/add', {
 
       "username": uname,
       "password": pass
