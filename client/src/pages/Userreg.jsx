@@ -1,14 +1,14 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react';
 import '../css/materialize.css'
+import { useNavigate } from 'react-router-dom';
 
 
 function Userreg() {
 
   const [uname, setUser] = useState('')
   const [pass, setPass] = useState('')
-
-
+const navigate=useNavigate();
 
   const handlesub = async () => {
     await axios.post('https://notepad-server-one.vercel.app/user/add', {
@@ -16,6 +16,7 @@ function Userreg() {
       "username": uname,
       "password": pass
     })
+    navigate('./')
 
   }
 
