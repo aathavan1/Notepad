@@ -11,11 +11,11 @@ function Login() {
   const [finduser, setFinduser] = useState([]);
   const navigate = useNavigate();
 
-  // https://notepad-server-one.vercel.app
+  //https://notepad-server-aathavans-projects-17a4968c.vercel.app/
 
   // http://localhost:3001
   useEffect(() => {
-    axios.get('http://localhost:3001/user/')
+    axios.get('https://notepad-server-aathavans-projects-17a4968c.vercel.app/user/')
       .then((response) => {
         setFinduser(response.data);
       })
@@ -30,7 +30,7 @@ function Login() {
       if (user.username === uname) {
         userFound = true;
         if (user.password === pass) {
-          axios.put('http://localhost:3001/user/findu', {
+          axios.put('https://notepad-server-aathavans-projects-17a4968c.vercel.app/user/findu', {
             "uname": uname,
             "pass": pass
           })
