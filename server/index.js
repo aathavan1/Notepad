@@ -7,7 +7,8 @@ const app = express()
 app.use(cors(
 
     {
-        origin: "https://notepad-client-two.vercel.app"
+        origin: 'https://notepad-client-two.vercel.app',
+        optionsSuccessStatus: 200
         // methods: ["POST", "GET","PUT","DELETE"],
         // credentials: true
     }
