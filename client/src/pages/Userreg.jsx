@@ -16,7 +16,7 @@ const navigate=useNavigate();
       "username": uname,
       "password": pass
     })
-    navigate('./')
+    // navigate('./')
 
   }
 
@@ -42,7 +42,7 @@ const navigate=useNavigate();
              placeholder="password" 
              name='pass' 
              onChange={(e) => setPass(e.target.value)} />
-          <button onClick={handlesub} type='submit'>Submit</button>
+          <button onClick={handlesub} type='button'>Submit</button>
         </form>
       </div>
       </center>
