@@ -18,4 +18,10 @@ function App() {
   );
 }
 
+const rt=()=>{
+  return "aathavan"
+}
+
 export default App;
+
+module.exports=rt
