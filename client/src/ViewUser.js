@@ -11,7 +11,7 @@ function ViewUser() {
 
 
   useEffect(() => {
-    axios.get('http://localhost:3001/view')
+    axios.get('https://notepad-server-aathavans-projects-17a4968c.vercel.app/view')
     .then((user) => {
       setUser(user.data)
     }).catch(err => console.log(err))
@@ -22,14 +22,14 @@ function ViewUser() {
 const handlesub =async()=>{
   const na=name;
   const no=note
- await axios.post('http://localhost:3001/add',{
+ await axios.post('https://notepad-server-aathavans-projects-17a4968c.vercel.app/add',{
   "name":na,
   "notes":no
 })}
 
 
 const del =async(idd)=>{
-  await axios.delete('http://localhost:3001/add'+idd)
+  await axios.delete('https://notepad-server-aathavans-projects-17a4968c.vercel.app/add'+idd)
 }
   
 

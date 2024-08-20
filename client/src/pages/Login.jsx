@@ -11,8 +11,11 @@ function Login() {
   const [finduser, setFinduser] = useState([]);
   const navigate = useNavigate();
 
+  //https://notepad-server-aathavans-projects-17a4968c.vercel.app/
+
+  // http://localhost:3001
   useEffect(() => {
-    axios.get('http://localhost:3001/user/')
+    axios.get('https://notepad-server-aathavans-projects-17a4968c.vercel.app/user/')
       .then((response) => {
         setFinduser(response.data);
       })
@@ -27,13 +30,13 @@ function Login() {
       if (user.username === uname) {
         userFound = true;
         if (user.password === pass) {
-          axios.put('http://localhost:3001/user/findu', {
+          axios.put('https://notepad-server-aathavans-projects-17a4968c.vercel.app/user/findu', {
             "uname": uname,
             "pass": pass
           })
-          .then((response) => {
-            navigate('/view/' + response.data);
-          });
+            .then((response) => {
+              navigate('/view/' + response.data);
+            });
         } else {
           swal.fire("Wrong password", "Try a different password you last knew", "error");
         }
@@ -48,7 +51,7 @@ function Login() {
     <div className='login-container'>
       <div className='login-box'>
         <h1>User Login</h1>
-        <button className='button-add-person' onClick={() => navigate('./forget')}>
+        <button className='button-add-person' onClick={() => navigate('./reg')}>
           <IoPersonAdd />
         </button>
         <form className='login-form' onSubmit={(e) => { e.preventDefault(); handlesub(); }}>
