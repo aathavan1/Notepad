@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import swal from 'sweetalert2';
 import { IoPersonAdd } from "react-icons/io5";
-import '../css/materialize.css'; // Import the CSS file for styling
+import '../css/materialize.css';
 
 function Login() {
   const [uname, setUser] = useState('');
@@ -11,11 +11,8 @@ function Login() {
   const [finduser, setFinduser] = useState([]);
   const navigate = useNavigate();
 
-  //https://notepad-server-aathavans-projects-17a4968c.vercel.app/
-
-  // http://localhost:3001
   useEffect(() => {
-    axios.get('https://notepad-server-aathavans-projects-17a4968c.vercel.app/user/')
+    axios.get('http://localhost:3001/user/')
       .then((response) => {
         setFinduser(response.data);
       })
@@ -30,13 +27,13 @@ function Login() {
       if (user.username === uname) {
         userFound = true;
         if (user.password === pass) {
-          axios.put('https://notepad-server-aathavans-projects-17a4968c.vercel.app/user/findu', {
+          axios.put('http://localhost:3001/user/findu', {
             "uname": uname,
             "pass": pass
           })
-            .then((response) => {
-              navigate('/view/' + response.data);
-            });
+          .then((response) => {
+            navigate('/view/' + response.data);
+          });
         } else {
           swal.fire("Wrong password", "Try a different password you last knew", "error");
         }

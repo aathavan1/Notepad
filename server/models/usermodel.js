@@ -1,6 +1,6 @@
 const mongoose =require('mongoose')
 
-mongoose.connect('mongodb+srv://aathavan:1122@cluster0.czqzplr.mongodb.net/Notepad')
+mongoose.connect('mongodb://localhost:27017/Notepad')
 
 const userSchema=new mongoose.Schema({
     username:{
