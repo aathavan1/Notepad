@@ -13,16 +13,20 @@ function Userreg() {
 
 
 
-  const handlesub = async (e) => {
-    e.preventDefault()
+  const handlesub = async () => {
+
     try{
       if(uname.length>0 && pass.length>7){
         await axios.post('http://localhost:3001/user/add', {
           "username": uname,
           "password": pass
         })
-        swal.fire("Done", "You have created a new account", "sucess");
+        swal.fire("Done", "You have created a new account", "success");
         navigate('../')
+      }
+      else if(pass.length<8){
+        swal.fire("Warning", "Your password should contains atleast 8 characters", "error");
+
       }
 
     }
@@ -42,7 +46,6 @@ function Userreg() {
         <br />
         <br />
         <form className='login-form' >
-
           <label>Enter your username</label>
           <input type="text" htmlFor='username' placeholder="Username" name='name' onChange={(e) => setUser(e.target.value)} /><br />
           <label>Enter your Password</label>
